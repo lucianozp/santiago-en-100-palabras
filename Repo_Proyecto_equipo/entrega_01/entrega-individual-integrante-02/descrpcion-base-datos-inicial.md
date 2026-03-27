@@ -6,7 +6,7 @@ Los datos originales provienen de publicaciones oficiales del concurso (listados
 
 ## Contenido
 
-La base de datos contiene información sobre los cuentos ganadores de las 24 ediciones del concurso. Se trata de datos estructurados en variables categóricas.
+La base de datos contiene información sobre los cuentos ganadores de las 12 ediciones del concurso (12-24). Se trata de datos estructurados que variables categóricas.
 
 Variables consideradas:
 
@@ -18,7 +18,7 @@ Género del autor/a
 
 Periodo de cobertura:
 
-Desde 2001 hasta la edición más reciente disponible (24 ediciones del concurso)
+Desde la edición 12 hasta la edición más reciente disponible (12 últimas ediciones del concurso)
 
 Pertinencia
 
