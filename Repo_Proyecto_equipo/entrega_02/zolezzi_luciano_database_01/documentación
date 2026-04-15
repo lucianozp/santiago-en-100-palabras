@@ -1,0 +1,28 @@
+## 1. Proceso de Limpieza de Datos 
+
+Para asegurar la calidad de nuestro reportaje y la transparencia de los hallazgos, hicimos un proceso de limpieza.
+
+### Herramientas utilizadas
+* **Google Excel / Excel:** Para la estructuración de las bases de datos y el cruce de tablas.
+
+### Pasos 
+* Decisiones: Respetar los espacios de los títulos para mantener la originalidad de los títulos para respetar la intención  del autor.
+
+
+## 2. Fuentes de Datos
+
+Hemos seleccionado las siguientes fuentes porque son las
+
+* Libros Santiago en 100 Palabras: Es nuestra fuente principal. Se eligió porque es donde estan los libros del concurso. 
+* Fundación Plagio: La visita a sus oficinas permitió aclarar dudas sobre  textos y validar nuestra metodología de recolección.
+
+## 3. Preguntas de Investigación 
+
+A partir de nuestra base de datos nuestro proyecto responde a las siguientes preguntas:
+
+1. Correlación Geográfica: ¿Existe una relación proporcional entre el puntaje SIMCE de una comuna y la cantidad de seleccionados que aporta a los libros del concurso?
+2. Brecha de Participación: ¿Qué porcentaje de los cuentos publicados proviene de las 3 comunas con mayor acceso cultural vs. las 3 comunas con menor acceso cultural? 
+
+## 4. Replicabilidad
+
+Este proceso es replicable siempre que se utilicen los mismos criterios de comunas y se crucen los datos de las bases de datos de los libros del concurso con datos del acceso cultural de cada comuna
