@@ -1,0 +1,52 @@
+## 1. Proceso de limpieza de datos
+
+El proceso de limpieza y construcción de la base de datos se realizó en distintas etapas, combinando trabajo manual y automatización. Primero se recopilaron todos los libros en formato PDF del concurso *Santiago en 100 palabras*. A partir de estos documentos se extrajeron las siguientes variables:
+
+- Título del cuento  
+- Nombre del autor  
+- Edad  
+- Comuna  
+- Género  
+
+Las primeras ediciones del concurso fueron tabuladas manualmente en una planilla. Esto permitió:
+- Familiarizarse con la estructura de los datos  
+- Detectar inconsistencias tempranas (que aclaramos al ir a las oficinas de Plagio)  
+- Definir criterios de registro (ej: cómo escribir comunas o ver datos faltantes)
+
+Desde la quinta edición en adelante, se utilizó **Gemini+** para automatizar la extracción y tabulación de datos desde los PDF, dada la gran cantidad de tiempo que estaba tomando extraer los datos de forma ciertamente análoga. Si bien optamos por automatizar debido al alto volumen de datos, mantuvimos una revisión manual posterior para asegurar calidad.
+
+Además, se realizó una visita a la oficina de Plagio, donde se aclararon dudas y se detectó un error histórico en la base publicada en la web, la que estaba generando problemas al momento de tabular ya que leíamos como inconsistencia en las versiones algo que era un simple error de tipeo.
+
+### 1.5 Estandarización de variables
+
+Otro punto importante es que se aplicaron criterios comunes para asegurar consistencia:
+
+- **Comunas:** nombres unificados (ej: “Santiago” en vez de variantes)  
+- **Edad:** uso de “S/D” en casos sin información  
+- **Género:** categorización binaria según lo publicado en los libros  
+
+Una vez terminada la tabulación de datos sobre los cuentos, decidimos incluir variables socioeconómicas y educacionales a nivel comunal para efectos de complementar nuestra investigación, tales como:
+
+- Porcentaje de pobreza por ingresos  
+- Pobreza multidimensional  
+- Puntajes SIMCE  
+- Puntajes PSU  
+
+## 2. Fuentes de datos
+
+Las fuentes principales fueron el sitio oficial de *Santiago en 100 palabras* (PDF de cada edición), ya que son la fuente directa y oficial de los cuentos seleccionados. Y respecto a los datos socioeconómicos nuestras fuentes fueron tanto datos de la encuesta CASEN respecto a los niveles de pobreza, como datos alojados en la Biblioteca del Congreso Nacional de Chile cuando se trata de los porcentajes respecto a resultados académicos por comuna. Estas fuentes fueron elegidas ya que son las más actualizadas y más precisas al momento de estudiar este tipo de trabajos, ya que trabajan con universos mucho más grandes donde existe información respecto a cada una de las comunas de la Región Metropolitana.
+
+## 3. Preguntas que permite responder la base de datos
+
+Una vez limpia y estructurada, la base de datos permite responder diversas preguntas relevantes para el reportaje.
+
+- ¿Qué comunas concentran la mayor cantidad de cuentos seleccionados en *Santiago en 100 palabras*?
+- ¿Existen comunas subrepresentadas?
+
+- ¿Existe relación entre nivel de pobreza comunal y probabilidad de aparecer en los cien mejores cuentos?
+
+- ¿Las comunas con mejores indicadores socioeconómicos tienen mayor presencia en el concurso?
+
+- ¿Las comunas con mejor desempeño académico producen más cuentos destacados?
+
+- ¿Hay una condicionante de género al momento de tener más probabilidades de ser seleccionado/a en los cuentos seleccionados a lo largo del tiempo?
