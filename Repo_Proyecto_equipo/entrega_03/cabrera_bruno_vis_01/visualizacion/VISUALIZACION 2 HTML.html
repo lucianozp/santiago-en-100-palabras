@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-e6b2fee62a0a5e1d14fa9491bb2e33a8"}, "mark": {"type": "circle", "size": 250}, "encoding": {"color": {"field": "Comuna", "legend": null, "type": "nominal"}, "tooltip": [{"field": "Comuna", "type": "nominal"}, {"field": "Pobreza", "type": "quantitative"}, {"field": "Porcentaje_Casos", "type": "quantitative"}], "x": {"field": "Pobreza", "title": "Pobreza Multidimensional (%)", "type": "quantitative"}, "y": {"field": "Porcentaje_Casos", "title": "Participaci\u00f3n en Santiago en 100 palabras (%)", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_1", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Relaci\u00f3n entre Vulnerabilidad Comunal y Presencia en la Muestra", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-e6b2fee62a0a5e1d14fa9491bb2e33a8": [{"Comuna": "Santiago", "Porcentaje_Casos": 15.81479254359591, "Pobreza": 16.5}, {"Comuna": "Providencia", "Porcentaje_Casos": 9.380637402285027, "Pobreza": 4.4}, {"Comuna": "\u00d1u\u00f1oa", "Porcentaje_Casos": 8.83944678292243, "Pobreza": 5.2}, {"Comuna": "Las Condes", "Porcentaje_Casos": 7.696933253156946, "Pobreza": 4.5}, {"Comuna": "La Florida", "Porcentaje_Casos": 5.71256764882742, "Pobreza": 13.2}, {"Comuna": "Maip\u00fa", "Porcentaje_Casos": 5.652435357787132, "Pobreza": 14.9}, {"Comuna": "Puente Alto", "Porcentaje_Casos": 5.231509320505111, "Pobreza": 19.0}, {"Comuna": "Pe\u00f1alol\u00e9n", "Porcentaje_Casos": 3.367408298256164, "Pobreza": 16.7}, {"Comuna": "La Reina", "Porcentaje_Casos": 3.307276007215875, "Pobreza": 4.9}, {"Comuna": "San Miguel", "Porcentaje_Casos": 2.3451593505712567, "Pobreza": 13.0}, {"Comuna": "Vitacura", "Porcentaje_Casos": 2.285027059530968, "Pobreza": 2.5}, {"Comuna": "Macul", "Porcentaje_Casos": 2.164762477450391, "Pobreza": 13.5}, {"Comuna": "Recoleta", "Porcentaje_Casos": 2.0444978953698136, "Pobreza": 21.2}, {"Comuna": "La Cisterna", "Porcentaje_Casos": 1.5634395670475045, "Pobreza": 13.5}, {"Comuna": "Quilicura", "Porcentaje_Casos": 1.5634395670475045, "Pobreza": 17.1}, {"Comuna": "San Joaqu\u00edn", "Porcentaje_Casos": 1.5634395670475045, "Pobreza": 19.7}, {"Comuna": "Conchal\u00ed", "Porcentaje_Casos": 1.503307276007216, "Pobreza": 18.8}, {"Comuna": "Quinta Normal", "Porcentaje_Casos": 1.3830426939266387, "Pobreza": 19.7}, {"Comuna": "Independencia", "Porcentaje_Casos": 1.32291040288635, "Pobreza": 22.5}, {"Comuna": "Lo Barnechea", "Porcentaje_Casos": 1.2627781118460615, "Pobreza": 10.9}, {"Comuna": "Pedro Aguirre Cerda", "Porcentaje_Casos": 1.2026458208057726, "Pobreza": 20.2}, {"Comuna": "Renca", "Porcentaje_Casos": 1.142513529765484, "Pobreza": 19.5}, {"Comuna": "San Bernardo", "Porcentaje_Casos": 1.0823812387251954, "Pobreza": 18.8}, {"Comuna": "El Bosque", "Porcentaje_Casos": 1.0823812387251954, "Pobreza": 17.5}, {"Comuna": "Estaci\u00f3n Central", "Porcentaje_Casos": 1.0823812387251954, "Pobreza": 22.9}, {"Comuna": "Pudahuel", "Porcentaje_Casos": 1.0222489476849068, "Pobreza": 16.9}, {"Comuna": "La Granja", "Porcentaje_Casos": 1.0222489476849068, "Pobreza": 22.4}, {"Comuna": "Lo Espejo", "Porcentaje_Casos": 0.9019843656043296, "Pobreza": 28.8}, {"Comuna": "Colina", "Porcentaje_Casos": 0.841852074564041, "Pobreza": 24.6}, {"Comuna": "Lo Prado", "Porcentaje_Casos": 0.7215874924834637, "Pobreza": 19.4}, {"Comuna": "La Pintana", "Porcentaje_Casos": 0.661455201443175, "Pobreza": 27.0}, {"Comuna": "Pe\u00f1aflor", "Porcentaje_Casos": 0.6013229104028863, "Pobreza": 15.2}, {"Comuna": "Huechuraba", "Porcentaje_Casos": 0.5411906193625977, "Pobreza": 18.7}, {"Comuna": "Padre Hurtado", "Porcentaje_Casos": 0.5411906193625977, "Pobreza": 19.6}, {"Comuna": "Cerrillos", "Porcentaje_Casos": 0.4810583283223091, "Pobreza": 22.6}, {"Comuna": "Buin", "Porcentaje_Casos": 0.4209260372820205, "Pobreza": 19.2}, {"Comuna": "Melipilla", "Porcentaje_Casos": 0.4209260372820205, "Pobreza": 22.9}, {"Comuna": "San Ram\u00f3n", "Porcentaje_Casos": 0.4209260372820205, "Pobreza": 19.2}, {"Comuna": "Pirque", "Porcentaje_Casos": 0.3607937462417318, "Pobreza": 19.5}, {"Comuna": "Lampa", "Porcentaje_Casos": 0.30066145520144316, "Pobreza": 25.7}, {"Comuna": "Cerro Navia", "Porcentaje_Casos": 0.30066145520144316, "Pobreza": 23.1}, {"Comuna": "Curacav\u00ed", "Porcentaje_Casos": 0.24052916416115455, "Pobreza": 25.9}, {"Comuna": "Paine", "Porcentaje_Casos": 0.1803968731208659, "Pobreza": 21.0}, {"Comuna": "Mar\u00eda Pinto", "Porcentaje_Casos": 0.06013229104028864, "Pobreza": 27.2}, {"Comuna": "San Pedro", "Porcentaje_Casos": 0.06013229104028864, "Pobreza": 32.0}, {"Comuna": "Talagante", "Porcentaje_Casos": 0.06013229104028864, "Pobreza": 17.0}, {"Comuna": "Tiltil", "Porcentaje_Casos": 0.06013229104028864, "Pobreza": 29.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
