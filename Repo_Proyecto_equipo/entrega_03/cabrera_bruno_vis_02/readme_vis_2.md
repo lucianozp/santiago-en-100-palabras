@@ -1,3 +1,6 @@
+## 3. Documentación
+
+### 
 A decir verdad el proceso de visualización fue un tanto complejo dado que, al iniciar la entrega, nuestras visualizaciones estaban lejos de ser como las ideamos en un principio. Teníamos claro que el hallazgo más interesante, y que por ende debía estar en la visualización, era que a la luz de nuestra base de datos con toda la participación histórica de la Región Metropolitana, la hipótesis inicial se confirmaba.
 
 Solo cinco comunas concentran cerca del 40% de los cuentos seleccionados en la historia del concurso, mientras que las comunas con mayores índices de vulnerabilidad presentan una presencia casi nula.
