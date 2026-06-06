@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-61d1367b5a8e0e89204b5216e2b14b70"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Porcentaje", "legend": null, "scale": {"scheme": "viridis"}, "type": "quantitative"}, "tooltip": [{"field": "Comuna", "type": "nominal"}, {"field": "Casos", "type": "quantitative"}, {"field": "Porcentaje", "format": ".1f", "type": "quantitative"}], "x": {"field": "Porcentaje", "title": "Porcentaje del Total (%)", "type": "quantitative"}, "y": {"field": "Comuna", "sort": "-x", "title": "Comuna", "type": "nominal"}}, "height": 800, "params": [{"name": "param_2", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Concentraci\u00f3n de Casos por Comuna (RM)", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-61d1367b5a8e0e89204b5216e2b14b70": [{"Comuna": "Santiago", "Casos": 263, "Porcentaje": 15.81479254359591}, {"Comuna": "Providencia", "Casos": 156, "Porcentaje": 9.380637402285027}, {"Comuna": "\u00d1u\u00f1oa", "Casos": 147, "Porcentaje": 8.83944678292243}, {"Comuna": "Las Condes", "Casos": 128, "Porcentaje": 7.696933253156946}, {"Comuna": "La Florida", "Casos": 95, "Porcentaje": 5.71256764882742}, {"Comuna": "Maip\u00fa", "Casos": 94, "Porcentaje": 5.652435357787132}, {"Comuna": "Puente Alto", "Casos": 87, "Porcentaje": 5.231509320505111}, {"Comuna": "Pe\u00f1alol\u00e9n", "Casos": 56, "Porcentaje": 3.367408298256164}, {"Comuna": "La Reina", "Casos": 55, "Porcentaje": 3.307276007215875}, {"Comuna": "San Miguel", "Casos": 39, "Porcentaje": 2.3451593505712567}, {"Comuna": "Vitacura", "Casos": 38, "Porcentaje": 2.285027059530968}, {"Comuna": "Macul", "Casos": 36, "Porcentaje": 2.164762477450391}, {"Comuna": "Recoleta", "Casos": 34, "Porcentaje": 2.0444978953698136}, {"Comuna": "La Cisterna", "Casos": 26, "Porcentaje": 1.5634395670475045}, {"Comuna": "Quilicura", "Casos": 26, "Porcentaje": 1.5634395670475045}, {"Comuna": "San Joaqu\u00edn", "Casos": 26, "Porcentaje": 1.5634395670475045}, {"Comuna": "Conchal\u00ed", "Casos": 25, "Porcentaje": 1.503307276007216}, {"Comuna": "Quinta Normal", "Casos": 23, "Porcentaje": 1.3830426939266387}, {"Comuna": "Independencia", "Casos": 22, "Porcentaje": 1.32291040288635}, {"Comuna": "Lo Barnechea", "Casos": 21, "Porcentaje": 1.2627781118460615}, {"Comuna": "Pedro Aguirre Cerda", "Casos": 20, "Porcentaje": 1.2026458208057726}, {"Comuna": "Renca", "Casos": 19, "Porcentaje": 1.142513529765484}, {"Comuna": "San Bernardo", "Casos": 18, "Porcentaje": 1.0823812387251954}, {"Comuna": "El Bosque", "Casos": 18, "Porcentaje": 1.0823812387251954}, {"Comuna": "Estaci\u00f3n Central", "Casos": 18, "Porcentaje": 1.0823812387251954}, {"Comuna": "Pudahuel", "Casos": 17, "Porcentaje": 1.0222489476849068}, {"Comuna": "La Granja", "Casos": 17, "Porcentaje": 1.0222489476849068}, {"Comuna": "Lo Espejo", "Casos": 15, "Porcentaje": 0.9019843656043296}, {"Comuna": "Colina", "Casos": 14, "Porcentaje": 0.841852074564041}, {"Comuna": "Lo Prado", "Casos": 12, "Porcentaje": 0.7215874924834637}, {"Comuna": "La Pintana", "Casos": 11, "Porcentaje": 0.661455201443175}, {"Comuna": "Pe\u00f1aflor", "Casos": 10, "Porcentaje": 0.6013229104028863}, {"Comuna": "Huechuraba", "Casos": 9, "Porcentaje": 0.5411906193625977}, {"Comuna": "Padre Hurtado", "Casos": 9, "Porcentaje": 0.5411906193625977}, {"Comuna": "Cerrillos", "Casos": 8, "Porcentaje": 0.4810583283223091}, {"Comuna": "Buin", "Casos": 7, "Porcentaje": 0.4209260372820205}, {"Comuna": "Melipilla", "Casos": 7, "Porcentaje": 0.4209260372820205}, {"Comuna": "San Ram\u00f3n", "Casos": 7, "Porcentaje": 0.4209260372820205}, {"Comuna": "Pirque", "Casos": 6, "Porcentaje": 0.3607937462417318}, {"Comuna": "Lampa", "Casos": 5, "Porcentaje": 0.30066145520144316}, {"Comuna": "Cerro Navia", "Casos": 5, "Porcentaje": 0.30066145520144316}, {"Comuna": "Curacav\u00ed", "Casos": 4, "Porcentaje": 0.24052916416115455}, {"Comuna": "Paine", "Casos": 3, "Porcentaje": 0.1803968731208659}, {"Comuna": "Isla de Maipo", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "Penitenciar\u00eda Santiago Sur", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "Mar\u00eda Pinto", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "San Pedro", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "San Jos\u00e9 de Maipo", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "Talagante", "Casos": 1, "Porcentaje": 0.06013229104028864}, {"Comuna": "Tiltil", "Casos": 1, "Porcentaje": 0.06013229104028864}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
