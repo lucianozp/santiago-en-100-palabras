@@ -580,28 +580,39 @@ footer p {
 }
 
 /* ==========================================================================
-   ESTILOS SLIDE SPLIT: REDISEÑO ULTRA-LIMPIO PARA IMAGEN PNG (CASOS RM)
+   ESTILOS SLIDE SPLIT: REDISEÑO SIMÉTRICO Y SEGURO PARA PLOTLY
    ========================================================================== */
 
 .slide-split {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    min-height: 95vh; 
-    margin: 60px 0;
-    background-color: #DBDBDB;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* 🛠️ CLONADO: Mismo ancho asimétrico que los PDFs */
+    max-width: 1200px !important;     /* 🛠️ CORREGIDO: Ya no es 100vw, ahora respeta el contenedor */
+    margin: 100px auto;               /* 🛠️ CLONADO: Mismo centrado que la sección anterior */
+    padding: 0 40px;                  /* 🛠️ CLONADO: Mismos márgenes de respiro */
+    position: relative;
+    gap: 60px;                        /* 🛠️ CLONADO: Mismo espacio entre columnas */
+}
+
+/* 🛠️ NUEVO: Copiamos el mismo lomo/línea exacto de los PDFs para una continuidad perfecta */
+.slide-split::after {
+    content: "";
+    position: absolute;
+    left: 46%; /* Calza perfecto con el lomo de arriba */
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #111111; 
+    opacity: 0.3;
 }
 
 /* Columna Izquierda: Bloque de Texto */
 .col-texto {
-    flex: 1; 
-    padding: 60px;
+    padding: 20px 20px 20px 0; /* Aire interno sin pisar la línea */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-right: 1px solid #111111;
     text-align: left;
+    /* ❌ BORRADO: Ya no usamos border-right, ahora manda el ::after de arriba */
 }
 
 .col-texto h2 {
@@ -629,78 +640,87 @@ footer p {
     text-align: center;
 }
 
-/* Columna Derecha: Contenedor Blanco */
-.col-grafico{
-    flex:1.2;
-
-    width:100%;
-
-    min-width:0;
-
-    padding:0 40px;
-
-    display:block;
-
-    overflow:hidden;
-
-    background:#ffffff;
+/* Columna Derecha: Contenedor del Gráfico */
+.col-grafico {
+    padding: 20px 0 20px 20px;
+    background: transparent;
+    
+    /* 🛠️ DOS PROPIEDADES CRUCIALES PARA CONTROLAR A PLOTLY: */
+    min-width: 0;        /* Obliga a la columna a respetar el "1.2fr" sin ensancharse */
+    overflow: hidden;    /* Si Plotly intenta desbordarse, frena el residuo visual */
 }
 
-/* Caja contenedora sin bordes, sombras ni outlines antiguos */
-.col-grafico .contenedor-interactivo{
-
-    width:100%;
-
-    max-width:100%;
-
-    margin:0;
-
-    padding:0;
-
-    border:none;
-
-    outline:none;
-
-    box-shadow:none;
-
-    background:transparent;
-}
-/* Control absoluto sobre tu imagen PNG estática */
-.grafico-plotly{
-    width:100%;
-    height:850px;
-
-    border:none;
-
-    display:block;
-
-    background:transparent;
+/* Contenedor interno del iframe */
+.col-grafico .contenedor-interactivo {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
-/* contenedor */
+/* El objeto iframe/gráfico final */
+.grafico-plotly {
+    width: 100%;
+    height: 70vh; /* Bajado sutilmente a 70vh para que el título no se corte en pantallas estándar */
+    display: block;
+    border: none;
+    background: transparent;
+}
 
-.col-grafico .contenedor-interactivo{
-    width:100%;
+/* ==========================================================================
+   SECCIÓN ANÁLISIS VULNERABILIDAD (DISEÑO CENTRADO DE WIREFRAME)
+   ========================================================================== */
 
-    max-width:none;
+.seccion-analisis-centrada {
+    max-width: 950px !important; /* Ancho ideal para que el gráfico respire horizontalmente */
+    margin: 120px auto;
+    text-align: center;         /* Centra los textos y elementos principales */
+    padding: 0 20px;
+}
 
-    margin:0;
+.titulo-vulnerabilidad {
+    font-size: 2.8rem;
+    border: none !important;    /* Quitamos la línea vertical roja para este diseño centrado */
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-    padding:0;
+/* Espacio y proporciones del gráfico */
+.caja-grafico-centrado {
+    width: 100%;
+    background: transparent;
+    margin-bottom: 50px;
+}
 
-    overflow:hidden;
+.iframe-dispersion {
+    width: 100%;
+    height: 620px;             /* Altura ideal para ver las burbujas y los dos ejes cómodamente */
+    border: none;
+    display: block;
+}
 
-    background:transparent;
+/* Acotamos el bloque de texto inferior para que sea cómodo de leer */
+.bloque-cronica-centrado {
+    max-width: 750px;          /* Evita que las líneas crucen toda la pantalla de lado a lado */
+    margin: 0 auto;
+    text-align: center;
+}
 
-    border:none;
+.bloque-cronica-centrado p {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
 
-    outline:none;
-
-    box-shadow:none;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+/* Primera frase destacada del wireframe */
+.bajada-principal {
+    font-size: 1.35rem !important;
+    font-weight: bold;
+    margin-bottom: 35px !important;
 }

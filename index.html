@@ -175,25 +175,56 @@
     </div>
 
     <!-- ➡️ COLUMNA DERECHA: Gráfico Concentración de Casos -->
-<div class="col-grafico">
-    <div class="contenedor-interactivo">
-
-        <iframe
-            src="visualizaciones/grafico_rojo.html"
-            class="grafico-plotly"
-            loading="lazy"
-            title="Concentración de Casos por Comuna (RM)">
-        </iframe>
-
+    <div class="col-grafico">
+        <div class="contenedor-interactivo">
+            <iframe
+                src="visualizaciones/grafico_animadorojo.html"
+                class="grafico-plotly"
+                loading="lazy"
+                title="Concentración de Casos por Comuna (RM)">
+            </iframe>
+        </div>
     </div>
-</div>
 
+</section> <!-- 🛠️ ¡ESTA ES LA ETIQUETA QUE DEBES AGREGAR AQUÍ PARA CERRAR EL SPLIT! -->
+
+
+<!-- Ahora esta sección nacerá libre, abajo y completamente centrada -->
+<section class="seccion-analisis-centrada">
+    
+    <h2 class="titulo-vulnerabilidad">
+        La <span class="enfasis-rojo">comuna</span>, pero <span class="enfasis-rojo">no</span> por cantidad de <span class="enfasis-rojo">habitantes</span>
+    </h2>
+
+    <!-- 🛠️ CAMBIO AQUÍ: Usamos tu contenedor interactivo unificado con su estilo Noir -->
+    <div class="contenedor-interactivo">
+        <iframe src="grafico_dispersion.html" style="height: 620px;" title="Relación entre Vulnerabilidad Comunal y Presencia en la Muestra"></iframe>
+    </div>
+
+    <!-- Bajadas del Gráfico con Énfasis Periodísticos -->
+    <div class="bloque-cronica-centrado">
+        <p class="bajada-principal">
+            Sino por la <span class="enfasis-rojo">vulnerabilidad</span>. A <span class="enfasis-rojo">menor</span> vulnerabilidad, <span class="enfasis-rojo">mayor</span> es la presencia dentro de los 100 <span class="enfasis-rojo">mejores</span> cuentos.
+        </p>
+
+        <p>
+            El gráfico muestra una <span class="enfasis-rojo">correlación negativa</span> donde, a medida que una comuna se desplaza hacia la <span class="enfasis-rojo">derecha</span> del eje X (pobreza), su presencia cae drásticamente hacia el suelo del gráfico.
+        </p>
+
+        <p>
+            Las comunas que registran una sola presencia dentro de los cuentos reconocidos son, coincidentemente, las que encabezan el ranking de pobreza multidimensional: <strong>Talagante (17%)</strong>, <strong>Isla de Maipo (22%)</strong>, <strong>San José de Maipo (24,5%)</strong> y casos críticos como <strong>María Pinto (27,2%)</strong> o <strong>Tiltil (29%)</strong>.
+        </p>
+
+        <p>
+            El punto más extremo lo ocupa <strong>San Pedro</strong>, la comuna más pobre de la región con un 32%, cuya burbuja en el gráfico se sitúa en casi el cero.
+        </p>
+    </div>
 </section>
 
-    <!-- SEPARADOR VISUAL DE ALTO IMPACTO (Tu imagen IMG_8359.png) -->
-    <div class="separador-visual">
-        <img src="diseno-historia/recursos/IMG_8359.png" alt="Metáfora visual de la desigualdad y la desconexión periférica en Santiago" class="noir-effect">
-    </div>
+<!-- El separador visual también queda fuera del split y se verá abajo a lo ancho -->
+<div class="separador-visual">
+    <img src="diseno-historia/recursos/IMG_8359.png" alt="Metáfora visual de la desigualdad y la desconexión periférica en Santiago" class="noir-effect">
+</div>
 
     <!-- SECCIÓN 2: LA EXCEPCIÓN DEL CENTRO -->
     <section> 
