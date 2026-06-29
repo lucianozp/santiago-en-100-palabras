@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Vulnerabilidad | Vega-Lite Dark</title>
+    
+    <!-- CDNs de Vega esenciales -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #111111; /* Forzamos el mismo negro de tu contenedor */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: block;
+        }
+        #vis {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor plano donde se inyectará el plano urbano -->
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+        var spec = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+          
+          /* 🛠️ EL MOTOR NOIR: Forzamos a Vega a pintar con la paleta de tu Webstory */
+          "config": {
+            "background": "#111111",
+            "title": {
+              "color": "#FFFFFF",
+              "fontSize": 16,
+              "anchor": "start"
+            },
+            "axis": {
+              "domainColor": "#E60000",   /* Líneas de los ejes en Rojo Sin City */
+              "gridColor": "#222222",     /* Grilla sutil oscura de fondo */
+              "labelColor": "#DBDBDB",    /* Números en gris claro solicitado */
+              "titleColor": "#E60000",    /* Títulos de los ejes en Rojo */
+              "tickColor": "#E60000"
+            },
+            "view": {"stroke": "transparent"} /* Volamos el recuadro gris nativo */
+          },
+          
+          "title": "Relación entre Vulnerabilidad Comunal y Presencia en la Muestra",
+          "width": "container", /* Se adapta elásticamente al ancho del iframe */
+          "height": 420,
+          
+          "data": {"name": "santiago-data"}, 
+          "mark": {"type": "circle", "size": 250, "opacity": 0.85}, 
+          "encoding": {
+            "color": {"field": "Comuna", "legend": null, "type": "nominal"}, 
+            "tooltip": [
+              {"field": "Comuna", "type": "nominal"}, 
+              {"field": "Pobreza", "type": "quantitative", "title": "Pobreza CASEN (%)"}, 
+              {"field": "Porcentaje_Casos", "type": "quantitative", "title": "Cuentos Premiados (%)"}
+            ], 
+            "x": {"field": "Pobreza", "title": "Pobreza Multidimensional (%)", "type": "quantitative"}, 
+            "y": {"field": "Porcentaje_Casos", "title": "Participación en Santiago en 100 palabras (%)", "type": "quantitative"}
+          }, 
+          "params": [{"name": "zoom_paneo", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], 
+          
+          "datasets": {
+            "santiago-data": [
+              {"Comuna": "Santiago", "Porcentaje_Casos": 15.81, "Pobreza": 16.5}, 
+              {"Comuna": "Providencia", "Porcentaje_Casos": 9.38, "Pobreza": 4.4}, 
+              {"Comuna": "Ñuñoa", "Porcentaje_Casos": 8.83, "Pobreza": 5.2}, 
+              {"Comuna": "Las Condes", "Porcentaje_Casos": 7.69, "Pobreza": 4.5}, 
+              {"Comuna": "La Florida", "Porcentaje_Casos": 5.71, "Pobreza": 13.2}, 
+              {"Comuna": "Maipú", "Porcentaje_Casos": 5.65, "Pobreza": 14.9}, 
+              {"Comuna": "Puente Alto", "Porcentaje_Casos": 5.23, "Pobreza": 19.0}, 
+              {"Comuna": "Peñalolén", "Porcentaje_Casos": 3.36, "Pobreza": 16.7}, 
+              {"Comuna": "La Reina", "Porcentaje_Casos": 3.30, "Pobreza": 4.9}, 
+              {"Comuna": "San Miguel", "Porcentaje_Casos": 2.34, "Pobreza": 13.0}, 
+              {"Comuna": "Vitacura", "Porcentaje_Casos": 2.28, "Pobreza": 2.5}, 
+              {"Comuna": "Macul", "Porcentaje_Casos": 2.16, "Pobreza": 13.5}, 
+              {"Comuna": "Recoleta", "Porcentaje_Casos": 2.04, "Pobreza": 21.2}, 
+              {"Comuna": "La Cisterna", "Porcentaje_Casos": 1.56, "Pobreza": 13.5}, 
+              {"Comuna": "Quilicura", "Porcentaje_Casos": 1.56, "Pobreza": 17.1}, 
+              {"Comuna": "San Joaquín", "Porcentaje_Casos": 1.56, "Pobreza": 19.7}, 
+              {"Comuna": "Conchalí", "Porcentaje_Casos": 1.50, "Pobreza": 18.8}, 
+              {"Comuna": "Quinta Normal", "Porcentaje_Casos": 1.38, "Pobreza": 19.7}, 
+              {"Comuna": "Independencia", "Porcentaje_Casos": 1.32, "Pobreza": 22.5}, 
+              {"Comuna": "Lo Barnechea", "Porcentaje_Casos": 1.26, "Pobreza": 10.9}, 
+              {"Comuna": "Pedro Aguirre Cerda", "Porcentaje_Casos": 1.20, "Pobreza": 20.2}, 
+              {"Comuna": "Renca", "Porcentaje_Casos": 1.14, "Pobreza": 19.5}, 
+              {"Comuna": "San Bernardo", "Porcentaje_Casos": 1.08, "Pobreza": 18.8}, 
+              {"Comuna": "El Bosque", "Porcentaje_Casos": 1.08, "Pobreza": 17.5}, 
+              {"Comuna": "Estación Central", "Porcentaje_Casos": 1.08, "Pobreza": 22.9}, 
+              {"Comuna": "Pudahuel", "Porcentaje_Casos": 1.02, "Pobreza": 16.9}, 
+              {"Comuna": "La Granja", "Porcentaje_Casos": 1.02, "Pobreza": 22.4}, 
+              {"Comuna": "Lo Espejo", "Porcentaje_Casos": 0.90, "Pobreza": 28.8}, 
+              {"Comuna": "Colina", "Porcentaje_Casos": 0.84, "Pobreza": 24.6}, 
+              {"Comuna": "Lo Prado", "Porcentaje_Casos": 0.72, "Pobreza": 19.4}, 
+              {"Comuna": "La Pintana", "Porcentaje_Casos": 0.66, "Pobreza": 27.0}, 
+              {"Comuna": "Peñaflor", "Porcentaje_Casos": 0.60, "Pobreza": 15.2}, 
+              {"Comuna": "Huechuraba", "Porcentaje_Casos": 0.54, "Pobreza": 18.7}, 
+              {"Comuna": "Padre Hurtado", "Porcentaje_Casos": 0.54, "Pobreza": 19.6}, 
+              {"Comuna": "Cerrillos", "Porcentaje_Casos": 0.48, "Pobreza": 22.6}, 
+              {"Comuna": "Buin", "Porcentaje_Casos": 0.42, "Pobreza": 19.2}, 
+              {"Comuna": "Melipilla", "Porcentaje_Casos": 0.42, "Pobreza": 22.9}, 
+              {"Comuna": "San Ramón", "Porcentaje_Casos": 0.42, "Pobreza": 19.2}, 
+              {"Comuna": "Pirque", "Porcentaje_Casos": 0.36, "Pobreza": 19.5}, 
+              {"Comuna": "Lampa", "Porcentaje_Casos": 0.30, "Pobreza": 25.7}, 
+              {"Comuna": "Cerro Navia", "Porcentaje_Casos": 0.30, "Pobreza": 23.1}, 
+              {"Comuna": "Curacaví", "Porcentaje_Casos": 0.24, "Pobreza": 25.9}, 
+              {"Comuna": "Paine", "Porcentaje_Casos": 0.18, "Pobreza": 21.0}, 
+              {"Comuna": "María Pinto", "Porcentaje_Casos": 0.06, "Pobreza": 27.2}, 
+              {"Comuna": "San Pedro", "Porcentaje_Casos": 0.06, "Pobreza": 32.0}, 
+              {"Comuna": "Talagante", "Porcentaje_Casos": 0.06, "Pobreza": 17.0}, 
+              {"Comuna": "Tiltil", "Porcentaje_Casos": 0.06, "Pobreza": 29.0}
+            ]
+          }
+        };
+
+        // Desactivamos las acciones de exportación nativas para mantener la interfaz limpia
+        var embedOpt = {"mode": "vega-lite", "actions": false};
+
+        vegaEmbed("#vis", spec, embedOpt).catch(console.error);
+    </script>
+</body>
+</html>
