@@ -430,6 +430,11 @@ footer p {
     margin-bottom: 40px;
 }
 
+.titulo-seccion {
+    color: #000000; /* 👈 Esto cambia las letras a negro */
+}
+
+
 .datos-clave {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -686,6 +691,7 @@ footer p {
     font-size: 2.8rem;
     border: none !important;    /* Quitamos la línea vertical roja para este diseño centrado */
     padding: 0;
+    color: #111111;
     margin-bottom: 40px;
     text-align: center;
 }
