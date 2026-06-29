@@ -1127,3 +1127,18 @@ footer p {
     content: none !important;
     display: none !important;
 }
+
+/* 📌 ESTILO PARA EL LOGO DEL FOOTER */
+.logo-footer {
+    display: block;
+    margin: 0 auto 25px auto; /* Centra la imagen y le da margen hacia abajo */
+    max-width: 220px;         /* Tamaño ideal para que se vea sutil y equilibrado */
+    height: auto;             /* Mantiene la proporción de la imagen sin deformarla */
+    opacity: 0.95;            /* Una ligera transparencia para que se integre mejor al entorno Noir */
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse */
+.logo-footer:hover {
+    opacity: 1;
+}
