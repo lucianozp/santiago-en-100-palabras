@@ -10,3 +10,6 @@ En nuestra opinión, si logramos demostrar nuestra hipótesis, ya que las comuna
 | Nombre de variable | Bruno Cabrera | Luciano Zolezzi | 
 | A| Realizo la página web y el código en su mayoria, además de la segunda visualización | Creo la primera y última visualización, se encargó de ordenar los archivos en github y diseño la página web (estructura, tipografía, paleta de colores ) | 
 
+| Nombre de variable | Bruno Cabrera | Luciano Zolezzi |  |
+|---|---|---|---|
+| A| Realizo la página web y el código en su mayoria, además de la segunda visualización | Creo la primera y última visualización, se encargó de ordenar los archivos en github y diseño la página web (estructura, tipografía, paleta de colores ) | 
