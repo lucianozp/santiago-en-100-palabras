@@ -29,3 +29,12 @@
 
 
 \* Fuente: Biblioteca Nacional
+
+
+Lo que queremos contar con las visualizaciones son la siguientes cosas: Para empezar, la primera señala la concentración de autores por comuna de la Región metropolitana, lo que queremos transmitir con esto es el comienzo de nuestra historia ya que deseamos mostrarle a las personas como hay 4 comunas que tienen una mayor concentración que las demás y por diferencia. Este esta representado de forma de mapa para que sea más referencial y las comunas con color rojo más intenso presentar más cantidad de autores.
+
+En cuanto al segundo, muestra la relación entre vulnerabilidad socioecónomica y aparición en la muestra, de forma que se pueda ver que si una comuna tiene un bajo nivel socieconómico, tiene una menor aparición de autores en el concurso, eso es lo que deseamos mostrar con dicho gráfico.
+
+Por último, el tercer gráfico es lo mismo que el primero, la concentración de autores por comunas, pero a lo largo de los años, de forma que se pueda ver como iba el recuento cuando la edición 2 fue publicada y así.
+
+
