@@ -1,24 +1,16 @@
-/* ==========================================================================
-   HOJA DE ESTILO NOIR / SIN CITY — WEBSTORY SANTIAGO EN 100 PALABRAS
-   ========================================================================== */
-
-/* Reset básico para limpiar márgenes por defecto del navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cuerpo de la página con el gris claro continuo solicitado */
 body {
     background-color: #DBDBDB; 
     color: #ffffff; 
     font-family: 'Lora', Georgia, serif; 
     line-height: 1.7;
-    /* ❌ Borramos el padding-top de aquí para que la portada llegue al tope */
 }
 
-/* Menú de navegación superior minimalista y oscuro */
 .menu {
     position: fixed;
     top: 0;
@@ -29,7 +21,7 @@ body {
     justify-content: center;
     gap: 30px;
     z-index: 1000;
-    border-bottom: 3px solid #E60000; /* Línea de acento rojo Sin City */
+    border-bottom: 3px solid #E60000;
 }
 
 .menu a {
@@ -44,89 +36,73 @@ body {
 }
 
 .menu a:hover {
-    color: #E60000; /* Cambia a rojo al pasar el cursor */
+    color: #E60000;
 }
 
-/* Sección de Portada (Hero) - Impacto Negro Inicial */
 .hero {
-    height: 100vh; /* Ocupa el 100% de la pantalla del usuario */
-    position: relative; /* Obligatorio para que las capas de fondo no se escapen */
-    overflow: hidden; /* Corta cualquier pedazo de mapa que intente salirse */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    background-color: #0A0A0A; /* Fondo negro profundo de respaldo */
+    background-color: #0A0A0A;
 }
 
-/* 1. El búnker del mapa de fondo */
 .hero-mapa-bg {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 1; /* Queda en el nivel más bajo */
+    z-index: 1;
 }
 
-/* Estilo general para las dos imágenes superpuestas */
 .capa-mapa {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    object-fit: cover; /* Mantiene la proporción del plano sin deformarlo */
-    /* Sacamos el mix-blend-mode para que el navegador no evapore los grises del mapa */
+    object-fit: cover;
 }
 
-/* Ajustes específicos de la capa base (Tu mapa gris en movimiento) */
 .capa-mapa.base {
     opacity: 0.35 !important;
     filter: grayscale(100%) brightness(140%) contrast(150%) !important;
-    
-    /* 🎬 EL MOTOR DEL PANEO:
-       Le damos 25 segundos para que sea un movimiento casi imperceptible y elegante.
-       'alternate' hace que cuando llegue abajo, vuelva a subir suavemente. */
     animation: paneoUrbano 30s infinite alternate ease-in-out;
 }
 
-/* ==========================================================================
-   MOTOR DE MOVIMIENTO: PANEO VERTICAL + EFECTO ZOOM
-   ========================================================================== */
 @keyframes paneoUrbano {
     0% {
-        object-position: center 15%;  /* Comienza mostrando la zona norte/oriente */
-        transform: scale(1.1);        /* Un sutil zoom inicial */
+        object-position: center 15%;
+        transform: scale(1.1);
     }
     50% {
-        transform: scale(1.75);         /* Al medio se acerca un pelito más para dar profundidad */
+        transform: scale(1.75);
     }
     100% {
-        object-position: center 100%;  /* Termina mostrando el sector sur */
-        transform: scale(1.15);        /* Vuelve al zoom inicial */
+        object-position: center 100%;
+        transform: scale(1.15);
     }
 }
 
-/* El truco del contraste definitivo: Suavizamos la manta oscura */
 .capa-vignette {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    /* Ahora va desde transparente al medio (0) hasta un negro sutil en los bordes (0.75) */
     background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(10,10,10,0.75) 90%);
     z-index: 2;
 }
 
-/* 3. El contenedor del texto (Adelante de todo) */
 .hero-contenido {
     position: relative;
-    z-index: 3; /* Salta al frente por sobre el mapa y la vignette */
+    z-index: 3;
     max-width: 850px;
 }
-
 
 .volanta {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    color: #E60000; /* Rojo para destacar el tipo de reportaje */
+    color: #E60000;
     letter-spacing: 2px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -150,10 +126,9 @@ h1 {
     font-style: italic;
 }
 
-/* Efectos de Identidad Visual: Tachado y Énfasis */
 .tachado {
     text-decoration: line-through;
-    text-decoration-color: #E60000; /* Raya roja sobre el "100 palabras" */
+    text-decoration-color: #E60000;
     text-decoration-thickness: 6px;
 }
 
@@ -162,45 +137,35 @@ h1 {
 }
 
 .flecha-bajar {
-    position: absolute; /* 🛠️ La desanclamos del texto para moverla libremente */
-    bottom: 30px;       /* 📍 La clava a 30 píxeles del borde inferior */
-    left: 50%;          /* 📐 La centra exactamente a la mitad horizontal */
-    
-    width: 45px;      
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 45px;
     height: 45px;
     cursor: pointer;
-    z-index: 4;         /* Rompe el frente para quedar por sobre la vignette */
-    
-    /* Conectamos la animación */
+    z-index: 4;
     animation: flechaFlotante 2s infinite ease-in-out;
     transition: filter 0.3s ease;
 }
 
-/* Efecto al pasar el mouse por encima */
 .flecha-bajar:hover {
     filter: drop-shadow(0 0 8px #E60000) brightness(1.2);
 }
 
-/* ==========================================================================
-   MOTOR DE ANIMACIÓN CORREGIDO: MANTIENE EL CENTRADO Y FLOTA
-   ========================================================================== */
 @keyframes flechaFlotante {
     0% {
-        /* ⚠️ NOTA CRUCIAL: El -50% mantiene la flecha centrada en el eje X, 
-           mientras que el segundo valor hace el rebote en el eje Y */
         transform: translate(-50%, 0);
     }
     50% {
-        transform: translate(-50%, 12px); /* Baja 12px sin perder su centro */
+        transform: translate(-50%, 12px);
     }
     100% {
         transform: translate(-50%, 0);
     }
 }
 
-/* Secciones de la Crónica */
 section {
-    max-width: 680px; /* Ancho óptimo europeo para lectura periodística cómoda */
+    max-width: 680px;
     margin: 90px auto;
     padding: 0 20px;
 }
@@ -210,7 +175,7 @@ h2 {
     font-size: 2.2rem;
     text-transform: uppercase;
     margin-bottom: 25px;
-    border-left: 6px solid #E60000; /* Bloque vertical rojo al lado del título */
+    border-left: 6px solid #E60000;
     padding-left: 15px;
     line-height: 1.1;
 }
@@ -221,7 +186,6 @@ p {
     color: #1A1A1A;
 }
 
-/* Párrafo destacado de Hipótesis */
 .destacado {
     font-size: 1.3rem;
     font-weight: bold;
@@ -233,17 +197,15 @@ p {
     font-style: italic;
 }
 
-/* Tratamiento Automatizado de Imágenes (Efecto Cómic/Noir de Alto Contraste) */
 img.noir-effect {
     width: 100%;
     height: auto;
     display: block;
     margin: 40px 0;
-    filter: grayscale(100%) contrast(190%) brightness(90%); /* Aplica el look Sin City por código */
-    border: 5px solid #111111; /* Marco negro grueso como viñeta de cómic */
+    filter: grayscale(100%) contrast(190%) brightness(90%);
+    border: 5px solid #111111;
 }
 
-/* Contenedor para los bloques de imágenes de pantalla completa */
 .separador-visual {
     width: 100%;
     background-color: #111111;
@@ -259,7 +221,6 @@ img.noir-effect {
     padding: 0 20px;
 }
 
-/* Recuadros Oscuros para los Microcuentos Antológicos */
 .cuento-recuadro {
     background-color: #1A1A1A;
     color: #DBDBDB;
@@ -269,7 +230,7 @@ img.noir-effect {
 }
 
 .cuento-recuadro.enfasis-borde-rojo {
-    border-left: 6px solid #E60000; /* Destaca el cuento crítico de Talagante */
+    border-left: 6px solid #E60000;
 }
 
 .cuento-titulo {
@@ -296,7 +257,6 @@ cite {
     letter-spacing: 1px;
 }
 
-/* Bloque Técnico de Metodología */
 .metodologia {
     background-color: #1A1A1A;
     color: #DBDBDB;
@@ -326,7 +286,6 @@ cite {
     font-size: 1.05rem;
 }
 
-/* Footer Institucional */
 footer {
     background-color: #000000;
     color: #777777;
@@ -345,81 +304,66 @@ footer p {
     color: #777777;
     font-size: 0.85rem;
 }
-/* ==========================================================================
-   ESTILOS PARA EL GRÁFICO INTERACTIVO (VERSIÓN LIMPIA Y UNIFICADA)
-   ========================================================================== */
 
-/* 1. El contenedor: La "caja" negra Noir donde vive el gráfico */
 .contenedor-interactivo {
     width: 100%;
-    max-width: 750px;          /* Un poco más ancho que el texto para que respire */
-    margin: 60px auto;         /* Lo centra y le da aire vertical */
-    background-color: #111111; /* Fondo negro puro Sin City */
-    padding: 25px;             /* Espacio interno para que respire el gráfico */
-    
-    /* Estética Novela Gráfica */
-    border: 6px solid #111111;           /* Marco grueso de cómic */
-    outline: 3px solid #E60000;          /* Línea exterior roja de acento */
-    box-shadow: 12px 12px 0px rgba(0,0,0,0.3); /* Sombra rígida y plana estilo pop art */
-    
-    transition: transform 0.3s ease;     /* Animación suave para el hover */
+    max-width: 750px;
+    margin: 60px auto;
+    background-color: #111111;
+    padding: 25px;
+    border: 6px solid #111111;
+    outline: 3px solid #E60000;
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
 }
 
-/* Efecto interactivo: la viñeta se levanta al pasar el mouse */
 .contenedor-interactivo:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 16px 16px 0px #E60000;   /* La sombra se vuelve roja */
+    box-shadow: 16px 16px 0px #E60000;
 }
 
-/* 2. El iframe por fuera: Control de tamaño absoluto para que NO se corte */
 .contenedor-interactivo iframe {
     width: 100%;
-    height: 520px;             /* Altura fija ideal para que entre el gráfico de Altair completo */
-    border: none !important;   /* Parche definitivo para volar los bordes nativos */
+    height: 520px;
+    border: none !important;
     display: block;
     background-color: transparent;
 }
 
-/* 3. Optimización para pantallas de celulares */
 @media (max-width: 768px) {
     .contenedor-interactivo {
-        padding: 15px;         /* Menos margen interno en pantallas chicas */
+        padding: 15px;
     }
     .contenedor-interactivo iframe {
-        height: 480px;         /* Se achica un pelo el alto para que quepa en el teléfono */
+        height: 480px;
     }
 }
-/* ==========================================================================
-   SECCIÓN SEGUNDA PÁGINA (DIAGRAMACIÓN ASIMÉTRICA)
-   ========================================================================== */
 
 .presentacion-ediciones {
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Divide la pantalla en dos columnas balanceadas */
+    grid-template-columns: 1fr 1.2fr;
     gap: 60px;
-    max-width: 1200px; /* Ancho extendido para formato panorámico de dos páginas */
+    max-width: 1200px;
     margin: 100px auto;
     padding: 0 40px;
     position: relative;
 }
 
-/* La línea vertical del medio exacta del wireframe */
 .presentacion-ediciones::after {
     content: "";
     position: absolute;
-    left: 46%; /* Centrado relativo entre las dos columnas */
+    left: 46%;
     top: 0;
     width: 1px;
     height: 100%;
-    background-color: #111111; /* Línea negra delgada como lomo de libro */
+    background-color: #111111;
     opacity: 0.3;
 }
 
-/* Columna Izquierda: Empuja los textos hacia abajo */
 .columna-texto-libro {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Alinea los bloques de texto abajo como en la foto */
+    justify-content: flex-end;
     padding-bottom: 20px;
 }
 
@@ -431,9 +375,8 @@ footer p {
 }
 
 .titulo-seccion {
-    color: #000000; /* 👈 Esto cambia las letras a negro */
+    color: #000000;
 }
-
 
 .datos-clave {
     font-size: 1.2rem;
@@ -441,16 +384,15 @@ footer p {
     margin: 35px 0;
 }
 
-/* Columna Derecha: Grilla para las portadas */
 .columna-grilla-portadas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cuadraditos por fila */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .tarjeta-edicion {
     background-color: #FFFFFF;
-    aspect-ratio: 1 / 1; /* Obliga a que siempre sean cuadrados perfectos */
+    aspect-ratio: 1 / 1;
     border: 1px solid #CCCCCC;
     cursor: pointer;
     overflow: hidden;
@@ -460,12 +402,11 @@ footer p {
 .tarjeta-edicion img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la portada sin deformarla */
-    filter: grayscale(20%); /* Un sutil toque Noir integrado */
+    object-fit: cover;
+    filter: grayscale(20%);
     transition: filter 0.3s;
 }
 
-/* Hover sobre las portadas */
 .tarjeta-edicion:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -473,10 +414,6 @@ footer p {
 .tarjeta-edicion:hover img {
     filter: grayscale(0%);
 }
-
-/* ==========================================================================
-   ESTILOS PARA EL VISOR MODAL (ZOOM)
-   ========================================================================== */
 
 #modal-visor {
     display: none;
@@ -561,9 +498,6 @@ footer p {
     color: #111111;
 }
 
-/* ==========================================================================
-   BOTÓN EXCLUSIVO PARA DESCARGA DE PDF
-   ========================================================================== */
 .btn-pdf {
     display: inline-flex;
     align-items: center;
@@ -584,40 +518,33 @@ footer p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* ==========================================================================
-   ESTILOS SLIDE SPLIT: REDISEÑO SIMÉTRICO Y SEGURO PARA PLOTLY
-   ========================================================================== */
-
 .slide-split {
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* 🛠️ CLONADO: Mismo ancho asimétrico que los PDFs */
-    max-width: 1200px !important;     /* 🛠️ CORREGIDO: Ya no es 100vw, ahora respeta el contenedor */
-    margin: 100px auto;               /* 🛠️ CLONADO: Mismo centrado que la sección anterior */
-    padding: 0 40px;                  /* 🛠️ CLONADO: Mismos márgenes de respiro */
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 1200px !important;
+    margin: 100px auto;
+    padding: 0 40px;
     position: relative;
-    gap: 60px;                        /* 🛠️ CLONADO: Mismo espacio entre columnas */
+    gap: 60px;
 }
 
-/* 🛠️ NUEVO: Copiamos el mismo lomo/línea exacto de los PDFs para una continuidad perfecta */
 .slide-split::after {
     content: "";
     position: absolute;
-    left: 46%; /* Calza perfecto con el lomo de arriba */
+    left: 46%;
     top: 0;
     width: 1px;
     height: 100%;
-    background-color: #111111; 
+    background-color: #111111;
     opacity: 0.3;
 }
 
-/* Columna Izquierda: Bloque de Texto */
 .col-texto {
-    padding: 20px 20px 20px 0; /* Aire interno sin pisar la línea */
+    padding: 20px 20px 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    /* ❌ BORRADO: Ya no usamos border-right, ahora manda el ::after de arriba */
 }
 
 .col-texto h2 {
@@ -645,17 +572,13 @@ footer p {
     text-align: center;
 }
 
-/* Columna Derecha: Contenedor del Gráfico */
 .col-grafico {
     padding: 20px 0 20px 20px;
     background: transparent;
-    
-    /* 🛠️ DOS PROPIEDADES CRUCIALES PARA CONTROLAR A PLOTLY: */
-    min-width: 0;        /* Obliga a la columna a respetar el "1.2fr" sin ensancharse */
-    overflow: hidden;    /* Si Plotly intenta desbordarse, frena el residuo visual */
+    min-width: 0;
+    overflow: hidden;
 }
 
-/* Contenedor interno del iframe */
 .col-grafico .contenedor-interactivo {
     width: 100%;
     height: auto;
@@ -667,36 +590,30 @@ footer p {
     box-shadow: none;
 }
 
-/* El objeto iframe/gráfico final */
 .grafico-plotly {
     width: 100%;
-    height: 70vh; /* Bajado sutilmente a 70vh para que el título no se corte en pantallas estándar */
+    height: 70vh;
     display: block;
     border: none;
     background: transparent;
 }
 
-/* ==========================================================================
-   SECCIÓN ANÁLISIS VULNERABILIDAD (DISEÑO CENTRADO DE WIREFRAME)
-   ========================================================================== */
-
 .seccion-analisis-centrada {
-    max-width: 950px !important; /* Ancho ideal para que el gráfico respire horizontalmente */
+    max-width: 950px !important;
     margin: 120px auto;
-    text-align: center;         /* Centra los textos y elementos principales */
+    text-align: center;
     padding: 0 20px;
 }
 
 .titulo-vulnerabilidad {
     font-size: 2.8rem;
-    border: none !important;    /* Quitamos la línea vertical roja para este diseño centrado */
+    border: none !important;
     padding: 0;
     color: #111111;
     margin-bottom: 40px;
     text-align: center;
 }
 
-/* Espacio y proporciones del gráfico */
 .caja-grafico-centrado {
     width: 100%;
     background: transparent;
@@ -705,14 +622,13 @@ footer p {
 
 .iframe-dispersion {
     width: 100%;
-    height: 620px;             /* Altura ideal para ver las burbujas y los dos ejes cómodamente */
+    height: 620px;
     border: none;
     display: block;
 }
 
-/* Acotamos el bloque de texto inferior para que sea cómodo de leer */
 .bloque-cronica-centrado {
-    max-width: 750px;          /* Evita que las líneas crucen toda la pantalla de lado a lado */
+    max-width: 750px;
     margin: 0 auto;
     text-align: center;
 }
@@ -724,14 +640,12 @@ footer p {
     margin-bottom: 25px;
 }
 
-/* Primera frase destacada del wireframe */
 .bajada-principal {
     font-size: 1.35rem !important;
     font-weight: bold;
     margin-bottom: 35px !important;
 }
 
-* Fondo gris claro tipo mesa de edición */
 .excepcion-centro .contenedor-espacio-cuentos {
     background-color: #E2E2E2; 
     position: relative;
@@ -748,32 +662,25 @@ footer p {
     height: 95%;
 }
 
-/* Configuración única y universal para tus 20 imágenes */
 .recorte-cuento {
     position: absolute;
-    max-width: 52%; /* Tamaño ideal para que se solapen sin tapar por completo la mesa */
+    max-width: 52%; 
     height: auto;
     background: #ffffff;
     padding: 5px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid #CCCCCC;
-    
-    /* 1. Estado base oculto antes de que aparezca con el Scroll */
     opacity: 0;
     transform: translateY(-40px) scale(1.08) rotate(var(--rotacion));
-    
-    /* 2. Transición fluida utilizando las variables del HTML */
     transition: opacity 0.5s ease-out var(--delay), 
                 transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1) var(--delay);
 }
 
-/* 🔥 ESTADO ACTIVADO POR JAVASCRIPT: Restaura la posición y mantiene la rotación */
 .recorte-cuento.animar-caida {
     opacity: 1;
     transform: translateY(0) scale(1) rotate(var(--rotacion));
 }
 
-/* Ajustes de tipografía Noir para tu lista de comunas */
 .lista-pobreza-noir {
     list-style: none;
     padding-left: 0;
@@ -791,53 +698,41 @@ footer p {
     margin-right: 8px;
 }
 
-/* ==========================================================================
-   Destacado: Cita Alejandro Zambra
-   ========================================================================== */
-
-/* Contenedor exterior para aislar la cita y darle aire en el scroll */
 .contenedor-cita-zambra {
     width: 100%;
-    max-width: 800px;  /* Ancho de lectura óptimo */
-    margin: 60px auto; /* Espaciado generoso arriba y abajo */
+    max-width: 800px;  
+    margin: 60px auto; 
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-/* Ajustes específicos para el recuadro de Zambra */
 .cuento-recuadro.zambra-style {
-    background-color: #F6F6F6; /* Un gris sutilísimo para que se despegue del fondo */
-    border-left: 4px solid #E60000; /* Línea roja Noir vertical como acento */
+    background-color: #F6F6F6; 
+    border-left: 4px solid #E60000; 
     padding: 30px 40px;
     margin: 0;
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* El texto de la cita en cursiva */
 .zambra-style .cuento-texto {
     font-family: 'Lora', serif;
-    font-style: italic; /* <--- Aquí se activa la magia de la cursiva */
+    font-style: italic; 
     font-size: 1.3rem;
     line-height: 2.1rem;
     color: #1A1A1A;
     margin-bottom: 15px;
 }
 
-/* El autor y el libro */
 .zambra-style cite {
     display: block;
     font-family: 'Oswald', sans-serif;
-    font-style: normal; /* El autor no va en cursiva para romper la monotonía */
+    font-style: normal; 
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #555555;
-    text-align: right; /* Alineado elegantemente a la derecha al final del bloque */
+    text-align: right; 
 }
-
-/* ==========================================================================
-   Módulo Interactivo: Tómbola de Comunas
-   ========================================================================== */
 
 .contenedor-tombola-rm {
     background-color: #EAEAEA;
@@ -847,27 +742,21 @@ footer p {
     min-height: 550px;
     position: relative;
     overflow: hidden;
-    padding: 0; /* 🛠️ Cambiado a 0 para que portadaruleta.jpg toque los bordes */
+    padding: 0; 
 }
 
-/* Clases utilitarias para ocultar/mostrar estados */
 .hidden {
     display: none !important;
 }
 
-/* Pantalla Inicial (Estado 1 con imagen de fondo) */
 .interfaz-sorteo {
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    
-    /* 📸 CAPA DE LEGIBILIDAD + TU COLLAGE DE LIBROS HISTÓRICOS */
     background-image: linear-gradient(rgba(234, 234, 234, 0.88), rgba(234, 234, 234, 0.88)), 
                       url('visualizaciones/portadaruleta.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    /* Forzamos a la interfaz a rellenar el cuadrante asimétrico derecho */
     width: 100%;
     height: 100%;
     min-height: 550px;
@@ -889,7 +778,6 @@ footer p {
     margin-bottom: 25px;
 }
 
-/* El Botón de Acción Principal */
 .boton-noir-accion {
     background-color: #111111;
     color: #ffffff;
@@ -908,7 +796,6 @@ footer p {
     transform: translate(2px, 2px);
 }
 
-/* Ruleta de carga (Efecto nombres veloces) */
 .slot-machine-comunas {
     text-align: center;
     width: 80%;
@@ -938,7 +825,6 @@ footer p {
     animation: cargarBarra 2.5s linear forwards;
 }
 
-/* Tarjeta del Cuento Final (Estilo Wireframe Original) */
 .talagante-card {
     background: #ffffff;
     padding: 40px;
@@ -964,17 +850,12 @@ footer p {
     color: #555555;
 }
 
-/* 🎬 Animaciones */
 @keyframes cargarBarra {
     to { left: 0; }
 }
 @keyframes impactarCuento {
     to { opacity: 1; transform: scale(1); }
 }
-
-/* ==========================================================================
-   🏁 MÓDULO DE CIERRE: PROYECCIÓN HISTÓRICA (CHART RACE)
-   ========================================================================== */
 
 .seccion-proyeccion-final {
     width: 100%;
@@ -984,7 +865,6 @@ footer p {
     box-sizing: border-box;
 }
 
-/* 📌 Título Superior Centrado (Formato Titular de Prensa) */
 .titulo-cierre-centrado {
     font-family: 'Oswald', sans-serif;
     font-size: 2.6rem;
@@ -997,7 +877,6 @@ footer p {
     line-height: 1.2;
 }
 
-/* 📌 Contenedor Dividido (Izquierda Gráfico / Derecha Texto) */
 .seccion-proyeccion-final .slide-split {
     display: flex;
     gap: 50px;
@@ -1005,23 +884,20 @@ footer p {
     margin-bottom: 60px;
 }
 
-/* Columna del Gráfico (Toma el 60% del ancho) */
 .seccion-proyeccion-final .col-grafico {
     flex: 0 0 60%;
     width: 60%;
 }
 
-/* Columna del Texto (Toma el 40% del ancho) */
 .seccion-proyeccion-final .col-texto {
     flex: 0 0 40%;
     width: 40%;
 }
 
-/* 📌 Caja del Iframe Interactivo */
 .contenedor-interactivo {
     width: 100%;
     background-color: transparent;
-    border: 1px solid #e0e0e0; /* Un sutil marco para contener la visualización */
+    border: 1px solid #e0e0e0; 
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     overflow: hidden;
@@ -1029,12 +905,11 @@ footer p {
 
 .grafico-plotly {
     width: 100%;
-    height: 520px; /* Altura ideal para que quepan las 15 comunas y el reproductor de Plotly */
+    height: 520px; 
     border: none;
     display: block;
 }
 
-/* 📌 Estilos de Texto del Relato Lateral */
 .col-texto .bajada-principal {
     font-size: 1.35rem;
     font-weight: 500;
@@ -1050,7 +925,6 @@ footer p {
     margin-bottom: 20px;
 }
 
-/* 📌 Bloque de Cierre Inferior (Ancho de lectura cómodo y centrado) */
 .bloque-cronica-final {
     max-width: 800px;
     margin: 60px auto 0 auto;
@@ -1065,7 +939,6 @@ footer p {
     margin-bottom: 30px;
 }
 
-/* 🚨 El Remate Final (Rojo Sin City / Formato Impacto) */
 .resaltado-noir-final {
     font-family: 'Oswald', sans-serif;
     font-size: 1.45rem !important;
@@ -1076,10 +949,6 @@ footer p {
     margin-top: 20px;
 }
 
-/* ==========================================================================
-   📱 ADAPTACIÓN A MÓVILES (Responsive Design)
-   ========================================================================== */
-
 @media (max-width: 992px) {
     .titulo-cierre-centrado {
         font-size: 2rem;
@@ -1087,7 +956,7 @@ footer p {
     }
 
     .seccion-proyeccion-final .slide-split {
-        flex-direction: column; /* Se apilan verticalmente en tablets y celulares */
+        flex-direction: column; 
         gap: 30px;
     }
 
@@ -1098,7 +967,7 @@ footer p {
     }
 
     .grafico-plotly {
-        height: 480px; /* Un poco más bajo en pantallas medianas */
+        height: 480px; 
     }
     
     .col-texto .bajada-principal {
@@ -1108,7 +977,7 @@ footer p {
 
 @media (max-width: 480px) {
     .grafico-plotly {
-        height: 420px; /* Evita scrolls incómodos en pantallas muy chicas */
+        height: 420px; 
     }
     
     .bloque-cronica-final p {
@@ -1120,32 +989,27 @@ footer p {
     }
 }
 
-/* ✂️ DESACTIVAR CUALQUIER DIVISOR FLOTANTE O BORDE EN EL CIERRE */
 .seccion-proyeccion-final .slide-split,
 .seccion-proyeccion-final .col-grafico,
 .seccion-proyeccion-final .col-texto {
     border: none !important;
 }
 
-/* Por si tu plantilla genera la línea usando pseudoelementos (:before o :after) */
 .seccion-proyeccion-final .slide-split::before,
 .seccion-proyeccion-final .slide-split::after {
     content: none !important;
     display: none !important;
 }
 
-/* 📌 ESTILO PARA EL LOGO DEL FOOTER */
 .logo-footer {
     display: block;
-    margin: 0 auto 25px auto; /* Centra la imagen y le da margen hacia abajo */
-    max-width: 220px;         /* Tamaño ideal para que se vea sutil y equilibrado */
-    height: auto;             /* Mantiene la proporción de la imagen sin deformarla */
-    opacity: 0.95;            /* Una ligera transparencia para que se integre mejor al entorno Noir */
+    margin: 0 auto 25px auto; 
+    max-width: 220px;         
+    height: auto;             
+    opacity: 0.95;            
     transition: opacity 0.3s ease;
 }
 
-/* Efecto sutil al pasar el mouse */
 .logo-footer:hover {
     opacity: 1;
 }
-
