@@ -1013,3 +1013,14 @@ footer p {
 .logo-footer:hover {
     opacity: 1;
 }
+
+.instruccion-mapa {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #333333; /* Un gris oscuro que contrasta limpio sobre el fondo claro */
+    font-style: italic;
+    text-align: left;
+    margin-top: 12px;
+    max-width: 95%;
+}
