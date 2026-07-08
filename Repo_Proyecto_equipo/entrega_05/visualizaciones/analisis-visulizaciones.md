@@ -19,13 +19,6 @@
 
 \* Fuente: Encuesta CASEN 2022. 
 
-## Base de Datos N°3: Porcentaje de Resultados PSU mayor o igula a 450 en colegios municipales, subvencionados y particulares 
-
-| Nombre de variable | Descripción | Tipo de dato | Valores posibles |
-|---|---|---|---|
-| Comuna | Comuna de la Región Metropolitana | Cualitativo | Santiago, Puente Alto, etc. |
-| Año | Año en que se realizo la prueba | Cuantitativo | 2008-2022 |
-| % de resultados igual o mayores a 450 puntos | Porcentaje | Cuantitativo | 0-100 |
 
 
 \* Fuente: Biblioteca Nacional
